@@ -351,9 +351,10 @@ button:focus {
 ============================================================================================ */
 .home_banner_area {
   z-index: 1;
-  background: url(../img/banner/home-banner-2.png) no-repeat top center;
+  background: url(../img/banner/banner-me.png) no-repeat top center;
   background-position: center;
-  background-size: cover; }
+  background-size: cover;
+}
   .home_banner_area .banner_inner {
     width: 100%; }
     .home_banner_area .banner_inner .home_right_img {
@@ -3277,7 +3278,9 @@ h6 {
     content: none; }
 
 .footer_area {
-  padding: 120px 0;
+  /*background-image: url(../img/me-transparent.png);*/
+  /*opacity: 0.5;*/
+  padding: 170px 0 120px 0;
   position: relative; }
   .footer_area:before {
     content: '';
