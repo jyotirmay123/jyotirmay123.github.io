@@ -7,7 +7,7 @@ is the file you need to edit to change the look of the
 theme.
 ---------------------------------------------------- */
 /*=====================================================================
-@Template Name: HostHub Construction 
+@Template Name: HostHub Construction
 @Developed By: Naim Lasker
 Author E-mail: naimlasker@gmail.com
 
@@ -71,6 +71,9 @@ button:focus {
 
 .mb-50 {
   margin-bottom: 50px; }
+
+.ml-10 {
+  margin-left: 10px; }
 
 .ml-15 {
   margin-left: 15px; }
@@ -338,13 +341,17 @@ button:focus {
   display: -ms-flexbox;
   display: flex; }
 
+.logo_h img {
+  height: 2em;
+  border-radius: 50%;
+}
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 /* Home Banner Area css
 ============================================================================================ */
 .home_banner_area {
   z-index: 1;
-  background: url(../img/banner/home-banner.png) no-repeat top center;
+  background: url(../img/banner/home-banner-2.png) no-repeat top center;
   background-position: center;
   background-size: cover; }
   .home_banner_area .banner_inner {
@@ -376,7 +383,7 @@ button:focus {
           height: 2px;
           position: absolute;
           top: 50%;
-          left: 23%;
+          left: 31%;
           background: #000000; }
           @media (max-width: 575px) {
             .home_banner_area .banner_inner .banner_content h3:after {
@@ -2522,7 +2529,7 @@ h6 {
   .single-brand-item .d-table-cell {
     vertical-align: middle; }
   .single-brand-item img {
-    max-width: 80px;
+    max-width: 100px;
     margin: 0 auto;
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
@@ -2542,7 +2549,7 @@ h6 {
       -webkit-filter: brightness(0%); }
 
 .client-info {
-  padding: 25px 30px;
+  padding: 25px 20px;
   background: #faf8ff;
   text-align: center;
   position: relative;
@@ -2557,7 +2564,7 @@ h6 {
     content: '';
     position: absolute;
     top: -25px;
-    left: -50px;
+    left: -60px;
     background: url(../img/client-info-bg.png) no-repeat;
     height: 175px;
     width: 175px; }
@@ -2602,6 +2609,9 @@ h6 {
     font-size: 60px;
     font-weight: 700;
     color: #000000; }
+  .call-now a {
+    cursor: pointer;
+  }
 
 /* End Brand Area css
 ============================================================================================ */
@@ -2753,7 +2763,8 @@ h6 {
     .testimonial_area .owl-carousel .owl-dots {
       display: none !important; } }
 .testimonial_area .owl-carousel .owl-item img {
-  width: auto !important; }
+  /*width: auto !important; */
+}
 
 .testi_item {
   padding: 50px 55px;
@@ -2787,6 +2798,18 @@ h6 {
     margin-bottom: 0px; }
   .testi_item:hover {
     box-shadow: 0px 10px 20px 0px rgba(118, 85, 225, 0.1); }
+
+  .testimonial_text_wrap {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+
+  .testimonial_text_wrap:hover {
+    -webkit-line-clamp: 15; /* number of lines to show */
+  }
 
 /* End Testimonial Area css
 ============================================================================================ */
