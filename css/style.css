@@ -670,6 +670,9 @@ button:focus {
     background: rgba(68, 88, 220, 0.85); }
 
 /*============ blog_left_sidebar css ==============*/
+.author_img {
+  width: 15em;
+}
 .blog_item {
   margin-bottom: 40px; }
 
@@ -831,6 +834,9 @@ button:focus {
       margin-bottom: 0px; }
   .blog_right_sidebar .popular_post_widget .post_item + .post_item {
     margin-top: 20px; }
+  .post_item img {
+    width: 5em;
+  }
   .blog_right_sidebar .post_category_widget .cat-list li {
     border-bottom: 2px dotted #eee;
     transition: all 0.3s ease 0s;
@@ -1153,6 +1159,16 @@ button:focus {
 
 /*============ End Blog Single Styles  =============*/
 /*---------------------------------------------------- */
+
+/*----------------------------------------------------*/
+/*============== Advertisement Area CSS ================*/
+.vid-ad {
+  width: 19em;
+  height: 10em;
+}
+/*============ End Advertisement Area CSS  =============*/
+/*---------------------------------------------------- */
+
 /*----------------------------------------------------*/
 /*============== contact_area css ================*/
 .mapBox {
