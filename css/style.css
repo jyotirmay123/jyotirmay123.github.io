@@ -490,6 +490,9 @@ button:focus {
     border-color: #4458dc;
     color: #fff; }
 
+.custom-blog-form{
+  width: 100%
+}
 .white_bg_btn {
   background: #fff;
   display: inline-block;
@@ -896,6 +899,10 @@ button:focus {
       border-radius: 0; }
     .blog_right_sidebar .newsletter_widget .text-bottom {
       font-size: 12px; }
+
+    button.bbtns {
+      margin-top: 1%;
+    }
   .blog_right_sidebar .tag_cloud_widget ul li {
     display: inline-block; }
     .blog_right_sidebar .tag_cloud_widget ul li a {
