@@ -3,7 +3,7 @@
 
 	var nav_offset_top = $('header').height() + 50;
 	/*-------------------------------------------------------------------------------
-	  Navbar 
+	  Navbar
 	-------------------------------------------------------------------------------*/
 
 	//* Navbar Fixed
@@ -27,7 +27,8 @@
 	function mailChimp() {
 		$('#mc_embed_signup').find('form').ajaxChimp();
 	}
-	mailChimp();
+	// Commented by JyotirmayS
+	// mailChimp();
 
 	$('select').niceSelect();
 	/* ---------------------------------------------
