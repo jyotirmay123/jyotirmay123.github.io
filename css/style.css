@@ -3353,3 +3353,21 @@ h6 {
 /*---------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
+
+/* Added by Jyotirmay S. */
+.fb-centralized {
+  margin: 10px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.vlog {
+  text-align: center;
+  color: red;
+  font-weight: bolder;
+}
+
+.vlog > a {
+  color: red;
+}
