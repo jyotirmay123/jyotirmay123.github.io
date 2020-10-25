@@ -105,7 +105,7 @@
                         <div class="info_item">
                             <i class="lnr lnr-home"></i>
                             <h6>Munich, Germany</h6>
-                            <p>Schröfelhofstr. 16</p>
+                            <p>Blütenstr. 03</p>
                         </div>
                         <div class="info_item">
                             <i class="lnr lnr-phone-handset"></i>
@@ -207,11 +207,11 @@
         // Initialize and add the map
         function initMap() {
             // The location of Uluru
-            var Munich = {lat: 48.1233048, lng: 11.4920898};
+            var Munich = {lat: 48.151756, lng: 11.5740053};
 
             // The map, centered at Munich
             var map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 15, center: Munich});
+                document.getElementById('map'), {zoom: 17, center: Munich});
             // The marker, positioned at Uluru
             var marker = new google.maps.Marker({position: Munich, map: map});
         }
@@ -231,6 +231,25 @@
         gtag('config', 'UA-72213266-2');
     </script>
     <!-- End Google Analytics -->
+
+<script>
+    $(document).ready(function() {
+        async function pushToDB() {
+            $.getJSON('https://ipapi.co/json/', function (geodata) {
+
+                geodata.time = Date.now();
+                geodata.page='contact.html';
+                console.log(geodata);
+
+                $.post( "https://jyotirmays-api.herokuapp.com/v1/insertJson", geodata, function( data ) {
+                    console.log(data);
+                });
+            });
+        }
+
+        pushToDB();
+    });
+</script>
 </body>
 
 </html>

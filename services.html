@@ -301,6 +301,25 @@
         gtag('config', 'UA-72213266-2');
     </script>
     <!-- End Google Analytics -->
+
+<script>
+    $(document).ready(function() {
+        async function pushToDB() {
+            $.getJSON('https://ipapi.co/json/', function (geodata) {
+
+                geodata.time = Date.now();
+                geodata.page='services.html';
+                console.log(geodata);
+
+                $.post( "https://jyotirmays-api.herokuapp.com/v1/insertJson", geodata, function( data ) {
+                    console.log(data);
+                });
+            });
+        }
+
+        pushToDB();
+    });
+</script>
 </body>
 
 </html>

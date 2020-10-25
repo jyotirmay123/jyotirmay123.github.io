@@ -524,16 +524,23 @@
         </script>
         <!-- End Google Analytics -->
 
-        <script>
-            $(document).ready(function() {
-                async function pushToDB() {
-                    $.getJSON('https://ipapi.co/json/', function (data) {
-                        console.log(data);
-                    });
-                }
+<script>
+    $(document).ready(function() {
+        async function pushToDB() {
+            $.getJSON('https://ipapi.co/json/', function (geodata) {
 
-                pushToDB();
+                geodata.time = Date.now();
+                geodata.page='single-blog.html';
+                console.log(geodata);
+
+                $.post( "https://jyotirmays-api.herokuapp.com/v1/insertJson", geodata, function( data ) {
+                    console.log(data);
+                });
             });
-        </script>
+        }
+
+        pushToDB();
+    });
+</script>
     </body>
     </html>
