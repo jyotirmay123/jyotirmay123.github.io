@@ -644,6 +644,17 @@
 	</script>
 	<!-- End Google Analytics -->
 
+	<script>
+		$(document).ready(function() {
+			async function pushToDB() {
+				$.getJSON('https://ipapi.co/json/', function (data) {
+					console.log(data);
+				});
+			}
+
+			pushToDB();
+		});
+	</script>
 </body>
 
 </html>
