@@ -531,7 +531,10 @@
         async function pushToDB() {
             $.getJSON('https://ipapi.co/json/', function (geodata) {
 
-                geodata.time = Date.now();
+                const timeElapsed = Date.now();
+                const today = new Date(timeElapsed);
+                geodata.time = today.toUTCString();
+                geodata.time_timezone = 'UTC';
                 geodata.page='blog.html';
                 console.log(geodata);
 
