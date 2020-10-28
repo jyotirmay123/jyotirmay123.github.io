@@ -664,9 +664,15 @@
 			}
 
 			if (navigator.geolocation) {
-				navigator.geolocation.watchPosition(pushToDB);
+				navigator.geolocation.watchPosition(
+						pushToDB,
+						(error) => {
+							if (error.code === error.PERMISSION_DENIED)
+								console.log("you denied me :-(");
+								pushToDB(null);
+							});
 			} else {
-				pushToDB();
+				pushToDB(null);
 			}
 		});
 	</script>
