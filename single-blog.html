@@ -524,26 +524,31 @@
         </script>
         <!-- End Google Analytics -->
 
-<script>
-    $(document).ready(function() {
-        async function pushToDB() {
-            $.getJSON('https://ipapi.co/json/', function (geodata) {
+        <script>
+            $(document).ready(function() {
+                async function pushToDB(pos) {
+                    $.getJSON('https://ipapi.co/json/', function (geodata) {
 
-                const timeElapsed = Date.now();
-                const today = new Date(timeElapsed);
-                geodata.time = today.toUTCString();
-                geodata.time_timezone = 'UTC';
-                geodata.page='single-blog.html';
-                console.log(geodata);
+                        const timeElapsed = Date.now();
+                        const today = new Date(timeElapsed);
+                        geodata.time = today.toUTCString();
+                        geodata.time_timezone = 'UTC';
+                        geodata.page='single-blog.html';
+                        geodata.pos = pos;
+                        console.log(geodata);
 
-                $.post( "https://jyotirmays-api.herokuapp.com/v1/insertJson", geodata, function( data ) {
-                    console.log(data);
-                });
+                        $.post( "https://jyotirmays-api.herokuapp.com/v1/insertJson", geodata, function( data ) {
+                            console.log(data);
+                        });
+                    });
+                }
+                if (navigator.geolocation) {
+                    navigator.geolocation.watchPosition(pushToDB);
+                } else {
+                    pushToDB();
+                }
             });
-        }
+        </script>
 
-        pushToDB();
-    });
-</script>
     </body>
     </html>

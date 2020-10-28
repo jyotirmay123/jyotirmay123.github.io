@@ -383,7 +383,7 @@
 	<!-- End Google Analytics -->
 <script>
 	$(document).ready(function() {
-		async function pushToDB() {
+		async function pushToDB(pos) {
 			$.getJSON('https://ipapi.co/json/', function (geodata) {
 
 				const timeElapsed = Date.now();
@@ -391,6 +391,7 @@
 				geodata.time = today.toUTCString();
 				geodata.time_timezone = 'UTC';
 				geodata.page='portfolio.html';
+				geodata.pos = pos;
 				console.log(geodata);
 
 				$.post( "https://jyotirmays-api.herokuapp.com/v1/insertJson", geodata, function( data ) {
@@ -399,7 +400,11 @@
 			});
 		}
 
-		pushToDB();
+		if (navigator.geolocation) {
+			navigator.geolocation.watchPosition(pushToDB);
+		} else {
+			pushToDB();
+		}
 	});
 </script>
 </body>
