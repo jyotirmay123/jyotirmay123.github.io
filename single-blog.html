@@ -524,37 +524,7 @@
         </script>
         <!-- End Google Analytics -->
 
-        <script>
-            $(document).ready(function() {
-                async function pushToDB(pos) {
-                    $.getJSON('https://ipapi.co/json/', function (geodata) {
-
-                        const timeElapsed = Date.now();
-                        const today = new Date(timeElapsed);
-                        geodata.time = today.toUTCString();
-                        geodata.time_timezone = 'UTC';
-                        geodata.page='single-blog.html';
-                        geodata.pos = pos;
-                        console.log(geodata);
-
-                        $.post( "https://jyotirmays-api.herokuapp.com/v1/insertJson", geodata, function( data ) {
-                            console.log(data);
-                        });
-                    });
-                }
-                if (navigator.geolocation) {
-                    navigator.geolocation.watchPosition(
-                        pushToDB,
-                        (error) => {
-                            if (error.code === error.PERMISSION_DENIED)
-                                console.log("you denied me :-(");
-                            pushToDB(null);
-                        });
-                } else {
-                    pushToDB(null);
-                }
-            });
-        </script>
+        <script async src="js/japi.js"></script>
 
     </body>
     </html>
