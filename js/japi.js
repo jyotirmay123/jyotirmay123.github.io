@@ -1,3 +1,9 @@
+document.currentScript = document.currentScript || (function() {
+    var scripts = document.getElementsByTagName('script');
+    return scripts[scripts.length - 1];
+})();
+let pageName = document.currentScript.getAttribute('page');
+
 $(document).ready(function() {
     async function pushToDB(pos, log='Navigator Position') {
         $.getJSON('https://ipapi.co/json/', function (geodata) {
@@ -6,7 +12,7 @@ $(document).ready(function() {
             const today = new Date(timeElapsed);
             geodata.time = today.toUTCString();
             geodata.time_timezone = 'UTC';
-            geodata.page='about.html';
+            geodata.page= pageName;
             geodata.pos = pos;
             geodata.log = log;
             geodata.comment = '';
