@@ -42,4 +42,40 @@ $(document).ready(function() {
     } else {
         pushToDB(null, 'No Navigator');
     }
+
+    // $('#git-tooltip').tooltip();
+    $('rect').mousemove((evt) => {
+        showTooltip(evt);
+    }).mouseleave((evt) => {
+        hideTooltip();
+    })
 });
+
+function showTooltip(evt) {
+    let tooltip = document.getElementById("tooltip");
+    tooltip.innerHTML = evt.target.dataset.count + ' push on '+ evt.target.dataset.date;
+    tooltip.style.display = "block";
+    tooltip.style.left = evt.pageX + 10 + 'px';
+    tooltip.style.top = evt.pageY + 10 + 'px';
+}
+
+function hideTooltip() {
+    var tooltip = document.getElementById("tooltip");
+    tooltip.style.display = "none";
+}
+
+$.get("https://jyotirmays-api.herokuapp.com/v1/se/data", (data)=>{
+    console.log(data);
+    new Chart(document.getElementById("line-chart"), {
+        type: 'line',
+        data: data,
+        options: {
+            title: {
+                display: true,
+                text: 'StackOverflow Reputation '
+            }
+        }
+    });
+});
+
+
