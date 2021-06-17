@@ -53,6 +53,9 @@ $(document).ready(function() {
 
 function showTooltip(evt) {
     let tooltip = document.getElementById("tooltip");
+    if(evt.target.dataset.count == undefined || evt.target.dataset.date == undefined) {
+        return false;
+    }
     tooltip.innerHTML = evt.target.dataset.count + ' push on '+ evt.target.dataset.date;
     tooltip.style.display = "block";
     tooltip.style.left = evt.pageX + 10 + 'px';
