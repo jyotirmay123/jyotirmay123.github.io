@@ -16,16 +16,13 @@ $(document).ready(function() {
             geodata.pos = pos;
             geodata.log = log;
             geodata.comment = '';
-            console.log(geodata);
 
             actualPush(geodata)
         });
     }
 
     async function actualPush(geodata) {
-        $.post( "https://jyotirmays-api.herokuapp.com/v1/insertJson", geodata, function( data ) {
-            console.log(data);
-        });
+        $.post( "https://jyotirmays-api.herokuapp.com/v1/insertJson", geodata, function( data ) {});
     }
 
     if (navigator.geolocation) {
@@ -74,7 +71,6 @@ function hideTooltip() {
 }
 
 $.get("https://jyotirmays-api.herokuapp.com/v1/se/data", (data)=>{
-    console.log(data);
     new Chart(document.getElementById("line-chart"), {
         type: 'line',
         data: data,
