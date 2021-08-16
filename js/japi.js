@@ -69,16 +69,3 @@ function hideTooltip() {
     var tooltip = document.getElementById("tooltip");
     tooltip.style.display = "none";
 }
-
-$.get("https://jyotirmays-api.herokuapp.com/v1/se/data", (data)=>{
-    new Chart(document.getElementById("line-chart"), {
-        type: 'line',
-        data: data,
-        options: {
-            title: {
-                display: true,
-                text: 'StackOverflow Reputation '
-            }
-        }
-    });
-});
