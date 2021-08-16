@@ -43,13 +43,19 @@ $(document).ready(function() {
         pushToDB(null, 'No Navigator');
     }
 
+    laodGitCalendar();
+});
+
+async function laodGitCalendar(){
+    await GitHubCalendar(".calendar", "jyotirmay123", { responsive: true });
+
     // $('#git-tooltip').tooltip();
     $('rect').mousemove((evt) => {
         showTooltip(evt);
     }).mouseleave((evt) => {
         hideTooltip();
     })
-});
+}
 
 function showTooltip(evt) {
     let tooltip = document.getElementById("tooltip");
