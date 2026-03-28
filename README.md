@@ -1,1 +1,1 @@
-jyotirmays.com
+jyotirmays.com is ok
